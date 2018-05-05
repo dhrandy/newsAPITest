@@ -13,12 +13,21 @@
       margin-top: 20px;
       border: 1px solid slategrey;
     }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
   
   </style>
 </head>
 
 <body>
   <div class="container">
+
+  <div>
+    <h2>Working News API from newsAPI.org</h2>
+  </div>  
     
   <div class = "news">
      <!-- News Goes Here  -->
@@ -41,10 +50,10 @@
 
       for (i = 0; i < 10; i++) {
 
-      var newsSource = $("<p>").text(response.articles[i].source.name);
-      var newsAuthor = $("<p>").text(response.articles[i].author);
-      var newsTitle = $("<p>").text(response.articles[i].title);
-      var newsURL = $("<p class = 'url'>").text(response.articles[i].url);
+      var newsSource = $("<p>").text("News Source: " + response.articles[i].source.name);
+      var newsAuthor = $("<p>").text("Author: " + response.articles[i].author);
+      var newsTitle = $("<p>").text("News Title: " + response.articles[i].title);
+      var newsURL = $("<p class = 'url'>").text("URL: " + response.articles[i].url);
       var newsBorder = $("<p class = 'border'>");
 
       tDiv.append(newsSource,newsAuthor,newsTitle,newsURL,newsBorder)
