@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
 
   <style>
-    .url {
-      margin-bottom: 40px;
+  
+    .border {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      border: 1px solid slategrey;
     }
   
   </style>
@@ -42,8 +45,9 @@
       var newsAuthor = $("<p>").text(response.articles[i].author);
       var newsTitle = $("<p>").text(response.articles[i].title);
       var newsURL = $("<p class = 'url'>").text(response.articles[i].url);
+      var newsBorder = $("<p class = 'border'>");
 
-      tDiv.append(newsSource,newsAuthor,newsTitle,newsURL)
+      tDiv.append(newsSource,newsAuthor,newsTitle,newsURL,newsBorder)
       }
       
     });
