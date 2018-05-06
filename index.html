@@ -15,11 +15,11 @@
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 60px;
       text-align: center;
     }
 
-    .test {
+    .news-image {
       height: 170px;
       width: 170px;
       object-fit: cover;
@@ -37,7 +37,29 @@
       font-size: 18px;
     }
 
-    
+    .smallerFont {
+      font-size: 14px
+    }
+
+    a {
+      color:firebrick;
+    }
+
+    .footer {
+      height: 50px;
+      padding:12px;
+      background-color: grey;
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    .container-fluid {
+      margin-right: 0px;
+      margin-left: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
   
   </style>
 </head>
@@ -45,13 +67,20 @@
 <body>
   <div class="container">
 
-  <div>
-    <h2>Working News API from newsAPI.org</h2>
-  </div>  
+    <div>
+      <h2>Cryptocurrrency News</h2>
+    </div>  
     
-  <div class = "news">
-     <!-- News Goes Here  -->
+    <div class = "news">
+      <!-- News Goes Here  -->
+    </div>
+
   </div>
+
+  <div class = "container-fluid">
+    <div class = "footer">
+        &#169; 2018 | Created by Randy Gentry | Created using <a href = "https://newsapi.org/">newsapi.org</a>
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -72,12 +101,12 @@
       for (i = 0; i < 10; i++) {
 
       // var image = ('<img src="'+ imageSource);
-      var newsImage = $("<img / class = 'test'>").attr('src', response.articles[i].urlToImage);
+      var newsImage = $("<img / class = 'news-image'>").attr('src', response.articles[i].urlToImage);
       var newsSource = $("<p>").text(response.articles[i].source.name);
       var newsAuthor = $("<p class = 'bold'>").text("Author: " + response.articles[i].author);
       var newsTitle = $("<p class = 'bold font'>").text(response.articles[i].title);
-      var newsDescription = $("<p>").text(response.articles[i].description);
-      var newsURL = $("<p>").html(response.articles[i].url);
+      var newsDescription = $("<p class = 'smallerFont'>").text(response.articles[i].description);
+      var newsURL = $("<p class = 'smallerFont'>").html(response.articles[i].url);
       var newsBorder = $("<p class = 'border'>");
 
       // $( "img" ).addClass( "test" );
