@@ -29,6 +29,14 @@
       /* border-right: 1px solid lightgray; */
     }
 
+    .bold {
+      font-weight: bold;
+    }
+
+    .font {
+      font-size: 18px;
+    }
+
     
   
   </style>
@@ -61,16 +69,13 @@
       var i = 0;
       // var myImage = new Image(100, 100);
       
-
       for (i = 0; i < 10; i++) {
-
-      
 
       // var image = ('<img src="'+ imageSource);
       var newsImage = $("<img / class = 'test'>").attr('src', response.articles[i].urlToImage);
       var newsSource = $("<p>").text(response.articles[i].source.name);
-      var newsAuthor = $("<p>").text("Author" + response.articles[i].author);
-      var newsTitle = $("<p>").text(response.articles[i].title);
+      var newsAuthor = $("<p class = 'bold'>").text("Author: " + response.articles[i].author);
+      var newsTitle = $("<p class = 'bold font'>").text(response.articles[i].title);
       var newsDescription = $("<p>").text(response.articles[i].description);
       var newsURL = $("<p>").html(response.articles[i].url);
       var newsBorder = $("<p class = 'border'>");
