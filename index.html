@@ -18,6 +18,18 @@
       margin-bottom: 20px;
       text-align: center;
     }
+
+    .test {
+      height: 170px;
+      width: 170px;
+      object-fit: cover;
+      float: left;
+      /* padding: 5px; */
+      margin-right: 20px;
+      /* border-right: 1px solid lightgray; */
+    }
+
+    
   
   </style>
 </head>
@@ -47,16 +59,27 @@
 
       var tDiv = $(".news");
       var i = 0;
+      // var myImage = new Image(100, 100);
+      
 
       for (i = 0; i < 10; i++) {
 
-      var newsSource = $("<p>").text("News Source: " + response.articles[i].source.name);
-      var newsAuthor = $("<p>").text("Author: " + response.articles[i].author);
-      var newsTitle = $("<p>").text("News Title: " + response.articles[i].title);
-      var newsURL = $("<p class = 'url'>").text("URL: " + response.articles[i].url);
+      
+
+      // var image = ('<img src="'+ imageSource);
+      var newsImage = $("<img / class = 'test'>").attr('src', response.articles[i].urlToImage);
+      var newsSource = $("<p>").text(response.articles[i].source.name);
+      var newsAuthor = $("<p>").text("Author" + response.articles[i].author);
+      var newsTitle = $("<p>").text(response.articles[i].title);
+      var newsDescription = $("<p>").text(response.articles[i].description);
+      var newsURL = $("<p>").html(response.articles[i].url);
       var newsBorder = $("<p class = 'border'>");
 
-      tDiv.append(newsSource,newsAuthor,newsTitle,newsURL,newsBorder)
+      // $( "img" ).addClass( "test" );
+
+      $('<p>').empty().append(newsImage);
+      tDiv.append(newsImage,newsTitle,newsAuthor,newsDescription,newsURL,newsBorder)
+      // tDiv.append($img,newsSource,newsAuthor,newsTitle,newsURL,newsBorder)
       }
       
     });
